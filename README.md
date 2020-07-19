@@ -1,4 +1,4 @@
-![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg) [![](https://jitpack.io/v/bahadirarslan/GreatCircle.svg)](https://jitpack.io/#bahadirarslan/GreatCircle) [![GitHub release](https://img.shields.io/github/release/bahadirarslan/GreatCircle.svg)](https://github.com/bahadirarslan/GreatCircle/releases)
+![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg) [![](https://jitpack.io/v/bahadirarslan/Jeodezi.svg)](https://jitpack.io/#bahadirarslan/Jeodezi) [![GitHub release](https://img.shields.io/github/release/bahadirarslan/Jeodezi.svg)](https://github.com/bahadirarslan/Jeodezi/releases)
 # Jeodezi
 Jeodezi is Kotlin version of [Chris Veness](https://github.com/chrisveness)'s amazing work [Geodesy Functions](https://github.com/chrisveness/geodesy). [Geodesy Functions](https://github.com/chrisveness/geodesy) is written in JavaScript and contains dozens of functions to make calculations about:
 > - Geodesic calculations (distances, bearings, etc) covering both spherical earth and ellipsoidal earth models, and both trigonometry-based and vector-based approaches.
