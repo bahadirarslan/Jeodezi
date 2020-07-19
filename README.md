@@ -26,7 +26,7 @@ allprojects {
 2. Add the code below to your app level build.gradle file
 ```
 dependencies {
-    implementation 'com.github.bahadirarslan:Jeodezi:0.5'
+    implementation 'com.github.bahadirarslan:Jeodezi:0.5.1'
 }
 ```
 
