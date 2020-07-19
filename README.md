@@ -78,6 +78,7 @@ This function returns the point at given fraction between startPoint and endPoin
 val istCoordinates = Coordinate(41.28111111, 28.75333333) // The coordinates of Istanbul Airport
 val jfkCoordinates = Coordinate(40.63980103, -73.77890015) // The coordinates of New York JFK Airport
 val fraction = 0.25
+val greatCircle = GreatCircle()
 val intermediate = greatCircle.intermediate(istCoordinates, jfkCoordinates, fraction)
 ```
 
@@ -88,6 +89,7 @@ val istCoordinates = Coordinate(41.28111111, 28.75333333) // The coordinates of 
 val fcoCoordinates = Coordinate(41.8002778,12.2388889) // The coordinates of Roma Fiumicino Airport
 val bearingFromIstanbulToWest : Double = 270.0
 val bearingFromRomeToNorthEast : Double = 45.0
+val greatCircle = GreatCircle()
 val intersection = greatCircle.intersection(istCoordinates, bearingFromIstanbulToWest, fcoCoordinates, bearingFromRomeToNorthEast)      
 ```
 
@@ -97,6 +99,7 @@ This function returns distance from currentPoint to great circle between startPo
 val istCoordinates = Coordinate(41.28111111, 28.75333333) // The coordinates of Istanbul Airport
 val jfkCoordinates = Coordinate(40.63980103, -73.77890015) // The coordinates of New York JFK Airport
 val fcoCoordinates = Coordinate(41.8002778,12.2388889) // The coordinates of Roma Fiumicino Airport
+val greatCircle = GreatCircle()
 val crossTrackDistanceInKm = greatCircle.crossTrackDistance(fcoCoordinates, istCoordinates, jfkCoordinates)  
 ```
 
@@ -106,6 +109,7 @@ This function returns how far currentPoint is along a path from from startPoint,
 val istCoordinates = Coordinate(41.28111111, 28.75333333) // The coordinates of Istanbul Airport
 val jfkCoordinates = Coordinate(40.63980103, -73.77890015) // The coordinates of New York JFK Airport
 val fcoCoordinates = Coordinate(41.8002778,12.2388889) // The coordinates of Roma Fiumicino Airport
+val greatCircle = GreatCircle()
 val alongTrackDistanceTo = greatCircle.alongTrackDistanceTo(fcoCoordinates, istCoordinates, jfkCoordinates)
 ```
 
@@ -114,6 +118,7 @@ This function returns maximum latitude reached when travelling on a great circle
 ```
 val istCoordinates = Coordinate(41.28111111, 28.75333333) // The coordinates of Istanbul Airport
 val bearingFromIstanbulToWest : Double = 270.0
+val greatCircle = GreatCircle()
 val maxLatitude = greatCircle.maxLatitude(istCoordinates, bearingFromIstanbulToWest)
 ```
 
@@ -123,6 +128,7 @@ This function returns the pair of meridians at which a great circle defined by t
 val istCoordinates = Coordinate(41.28111111, 28.75333333) // The coordinates of Istanbul Airport
 val jfkCoordinates = Coordinate(40.63980103, -73.77890015) // The coordinates of New York JFK Airport
 val latitude : Double = 60.0 // means 60 degrees north
+val greatCircle = GreatCircle()
 val crossingParallels = greatCircle.crossingParallels(istCoordinates, jfkCoordinates, latitude)
 ```
 ## Example
