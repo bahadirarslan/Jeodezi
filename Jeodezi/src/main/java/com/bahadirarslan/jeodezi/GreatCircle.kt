@@ -136,6 +136,12 @@ class GreatCircle {
      * @param endPoint Final coordinates
      * @param fraction Fraction between coordinates
      * @return Intermediate coordinates between startPoint and endPoint
+     *
+     * @sample
+     * val istCoordinates = Coordinate(41.28111111, 28.75333333) // The coordinates of Istanbul Airport
+     * val jfkCoordinates = Coordinate(40.63980103, -73.77890015) // The coordinates of New York JFK Airport
+     * val fraction = 0.25
+     * val intermediate = greatCircle.intermediate(istCoordinates, jfkCoordinates, fraction)
      */
     fun intermediate(startPoint : Coordinate, endPoint : Coordinate, fraction : Double) : Coordinate {
         if(startPoint == endPoint) return startPoint // same points
@@ -167,7 +173,14 @@ class GreatCircle {
      * @param secondPoint Second point coordinates
      * @param secondBearing Second path's bearing
      * @return Intersections coordinates of two paths or return null if there is no intersection
-     */
+     *
+     * @sample
+     * val istCoordinates = Coordinate(41.28111111, 28.75333333) // The coordinates of Istanbul Airport
+     * val fcoCoordinates = Coordinate(41.8002778,12.2388889) // The coordinates of Roma Fiumicino Airport
+     * val bearingFromIstanbulToWest : Double = 270.0
+     * val bearingFromRomeToNorthEast : Double = 45.0
+     * val intersection = greatCircle.intersection(istCoordinates, bearingFromIstanbulToWest, fcoCoordinates, bearingFromRomeToNorthEast)
+     *  */
     fun intersection(firstPoint : Coordinate, firstBearing : Double, secondPoint : Coordinate, secondBearing : Double) : Coordinate? {
         val deltaLat = secondPoint.latR - firstPoint.latR
         val deltaLon = secondPoint.lonR - firstPoint.lonR
@@ -239,6 +252,11 @@ class GreatCircle {
      * @param endPoint End of the great circle
      * @return Distance to the great circle. If returns positive this means right of the path, otherwise it means left of the path.
      *
+     * @sample
+     * val istCoordinates = Coordinate(41.28111111, 28.75333333) // The coordinates of Istanbul Airport
+     * val jfkCoordinates = Coordinate(40.63980103, -73.77890015) // The coordinates of New York JFK Airport
+     * val fcoCoordinates = Coordinate(41.8002778,12.2388889) // The coordinates of Roma Fiumicino Airport
+     * val crossTrackDistanceInKm = greatCircle.crossTrackDistance(fcoCoordinates, istCoordinates, jfkCoordinates)
      */
     fun crossTrackDistance(currentPoint : Coordinate, startPoint : Coordinate, endPoint : Coordinate) : Double {
         if (currentPoint == startPoint) return 0.0 // same point
@@ -251,6 +269,7 @@ class GreatCircle {
 
         return deltaCrossTrack * earthRadiusKm
     }
+
     /**
      * This function returns how far currentPoint is along a path from from startPoint, heading towards endPoint.
      * That is, if a perpendicular is drawn from currentPoint point to the (great circle) path, the
@@ -262,8 +281,13 @@ class GreatCircle {
      * @param endPoint End of the great circle
      * @return Distance along great circle to point nearest currentPoint point.
      *
+     * @sample
+     * val istCoordinates = Coordinate(41.28111111, 28.75333333) // The coordinates of Istanbul Airport
+     * val jfkCoordinates = Coordinate(40.63980103, -73.77890015) // The coordinates of New York JFK Airport
+     * val fcoCoordinates = Coordinate(41.8002778,12.2388889) // The coordinates of Roma Fiumicino Airport
+     * val alongTrackDistanceTo = greatCircle.alongTrackDistanceTo(fcoCoordinates, istCoordinates, jfkCoordinates)
+     *
      */
-
     fun alongTrackDistanceTo(currentPoint : Coordinate, startPoint : Coordinate, endPoint : Coordinate) : Double {
 
         if (currentPoint == startPoint) return 0.0 // same point
@@ -290,7 +314,10 @@ class GreatCircle {
      * @param bearing Bearing
      * @return Destination coordinates
      *
-     *
+     * @sample
+     * val istCoordinates = Coordinate(41.28111111, 28.75333333) // The coordinates of Istanbul Airport
+     * val bearingFromIstanbulToWest : Double = 270.0
+     * val maxLatitude = greatCircle.maxLatitude(istCoordinates, bearingFromIstanbulToWest)
      */
     fun maxLatitude(startPoint : Coordinate, bearing: Double) : Double{
        val bearingInRad = Math.toRadians(bearing)
@@ -310,7 +337,11 @@ class GreatCircle {
      * @param latitude Latitude crossings are to be determined for.
      * @return Array containing { lon1, lon2 } or null if given latitude not reached.
      *
-       *
+     * @sample
+     * val istCoordinates = Coordinate(41.28111111, 28.75333333) // The coordinates of Istanbul Airport
+     * val jfkCoordinates = Coordinate(40.63980103, -73.77890015) // The coordinates of New York JFK Airport
+     * val latitude : Double = 60.0 // means 60 degrees north
+     * val crossingParallels = greatCircle.crossingParallels(istCoordinates, jfkCoordinates, latitude)
      */
     fun crossingParallels(startPoint : Coordinate, endPoint : Coordinate, latitude: Double) : DoubleArray? {
         val latR = Math.toRadians(latitude)

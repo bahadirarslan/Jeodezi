@@ -1,9 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.bahadirarslan.example.MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:text="@string/jeodezi"
+            android:textSize="28sp" />
+
+        <Button
+            android:id="@+id/distance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/calculate_distance" />
+
+        <Button
+            android:id="@+id/distanceInNm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/calculate_distance_nm" />
+
+        <Button
+            android:id="@+id/bearing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bearing" />
+
+        <Button
+            android:id="@+id/finalBearing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/final_bearing" />
+
+        <Button
+            android:id="@+id/midPoint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/midpoint" />
+
+        <Button
+            android:id="@+id/intermediate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/intermediate" />
+
+        <Button
+            android:id="@+id/intersection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/intersection" />
+
+        <Button
+            android:id="@+id/destination"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/destination" />
+
+        <Button
+            android:id="@+id/crossTrack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cross_track" />
+
+        <Button
+            android:id="@+id/alongTrack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Along Track" />
+
+        <Button
+            android:id="@+id/maxLatitudes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Max Latitudes" />
+
+        <Button
+            android:id="@+id/crossingParallels"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Crossing Parallels" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

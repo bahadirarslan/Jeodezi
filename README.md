@@ -71,6 +71,60 @@ val bearing = greatCircle.bearing(istCoordinates, jfkCoordinates)
 val distance = 1000 // km
 val destination = greatCircle.destination(istCoordinates, distance, bearing) // The coordinates of point which is at 1000th km great circle between Istanbul Airport and JFK Airport
 ```
+
+#### Intermediate
+This function returns the point at given fraction between startPoint and endPoint
+```
+val istCoordinates = Coordinate(41.28111111, 28.75333333) // The coordinates of Istanbul Airport
+val jfkCoordinates = Coordinate(40.63980103, -73.77890015) // The coordinates of New York JFK Airport
+val fraction = 0.25
+val intermediate = greatCircle.intermediate(istCoordinates, jfkCoordinates, fraction)
+```
+
+#### Intersection
+This function returns the point of intersection of two paths which one starts from firstPoint with firstBearing and the other one starts from secondPoint with secondBearing
+```
+val istCoordinates = Coordinate(41.28111111, 28.75333333) // The coordinates of Istanbul Airport
+val fcoCoordinates = Coordinate(41.8002778,12.2388889) // The coordinates of Roma Fiumicino Airport
+val bearingFromIstanbulToWest : Double = 270.0
+val bearingFromRomeToNorthEast : Double = 45.0
+val intersection = greatCircle.intersection(istCoordinates, bearingFromIstanbulToWest, fcoCoordinates, bearingFromRomeToNorthEast)      
+```
+
+#### Cross Track
+This function returns distance from currentPoint to great circle between startPoint and endPoint
+```
+val istCoordinates = Coordinate(41.28111111, 28.75333333) // The coordinates of Istanbul Airport
+val jfkCoordinates = Coordinate(40.63980103, -73.77890015) // The coordinates of New York JFK Airport
+val fcoCoordinates = Coordinate(41.8002778,12.2388889) // The coordinates of Roma Fiumicino Airport
+val crossTrackDistanceInKm = greatCircle.crossTrackDistance(fcoCoordinates, istCoordinates, jfkCoordinates)  
+```
+
+#### Along Track
+This function returns how far currentPoint is along a path from from startPoint, heading towards endPoint. That is, if a perpendicular is drawn from currentPoint point to the (great circle) path, the along-track distance is the distance from the start point to where the perpendicular crosses the path.
+```
+val istCoordinates = Coordinate(41.28111111, 28.75333333) // The coordinates of Istanbul Airport
+val jfkCoordinates = Coordinate(40.63980103, -73.77890015) // The coordinates of New York JFK Airport
+val fcoCoordinates = Coordinate(41.8002778,12.2388889) // The coordinates of Roma Fiumicino Airport
+val alongTrackDistanceTo = greatCircle.alongTrackDistanceTo(fcoCoordinates, istCoordinates, jfkCoordinates)
+```
+
+#### Max Latitudes
+This function returns maximum latitude reached when travelling on a great circle on given bearing from startPoint point (‘Clairaut’s formula’). Negate the result for the minimum latitude (in the southern hemisphere)
+```
+val istCoordinates = Coordinate(41.28111111, 28.75333333) // The coordinates of Istanbul Airport
+val bearingFromIstanbulToWest : Double = 270.0
+val maxLatitude = greatCircle.maxLatitude(istCoordinates, bearingFromIstanbulToWest)
+```
+
+#### Crossing Parallels
+This function returns the pair of meridians at which a great circle defined by two points crosses the given latitude. If the great circle doesn't reach the given latitude, null is returned.
+```
+val istCoordinates = Coordinate(41.28111111, 28.75333333) // The coordinates of Istanbul Airport
+val jfkCoordinates = Coordinate(40.63980103, -73.77890015) // The coordinates of New York JFK Airport
+val latitude : Double = 60.0 // means 60 degrees north
+val crossingParallels = greatCircle.crossingParallels(istCoordinates, jfkCoordinates, latitude)
+```
 ## Example
 You can find an example application which uses Jeodezi library in the repo. 
 

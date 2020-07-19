@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">Playground</string>
+    <string name="app_name">Example</string>
+    <string name="jeodezi">Jeodezi Functions</string>
+    <string name="calculate_distance">Calculate Distance</string>
+    <string name="calculate_distance_nm">Calculate Distance (Nm)</string>
+    <string name="bearing">Bearing</string>
+    <string name="final_bearing">Final Bearing</string>
+    <string name="midpoint">Midpoint</string>
+    <string name="intermediate">Intermediate</string>
+    <string name="intersection">Intersection</string>
+    <string name="destination">Destination</string>
+    <string name="cross_track">Cross Track</string>
 </resources>
